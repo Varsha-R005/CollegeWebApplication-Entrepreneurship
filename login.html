@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Priyadarshini PU College</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for Eye Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="college-logo.png" alt="College Logo" class="logo">
+      <span class="college-name">Priyadarshini Junior College</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="login.html" class="active">Login</a>
+      <a href="details.html">Details</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="role">Login as</label>
+          <select id="role" required>
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        
+        <!-- Admin Email -->
+        <div class="input-group admin-field" style="display:none;">
+          <label for="adminEmail">Admin Email</label>
+          <input type="email" id="adminEmail" placeholder="Enter Admin Email">
+        </div>
+
+
+        <!-- Student Registration Number -->
+        <div class="input-group student-field" style="display:none;">
+          <label for="regno">Registration Number</label>
+          <input type="text" id="regno" placeholder="Enter Registration Number">
+        </div>
+
+        <!-- Teacher Email -->
+        <div class="input-group teacher-field" style="display:none;">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your Email">
+        </div>
+
+        <!-- Password Field -->
+        <div class="input-group password-field" style="display:none; position: relative;">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter Password">
+          <i id="togglePassword" class="fa-solid fa-eye"
+             style="position: absolute; right: 15px; top: 38px; cursor: pointer; color: #555;"></i>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <!-- Forgot Password Link (Hidden until role selected) -->
+        <p class="forgot-link" id="forgotPasswordContainer" style="display:none;">
+          <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  
+  <!-- Forgot Password Modal -->
+<!-- Forgot Password Modal (Secure OTP Version) -->
+<div id="forgotModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h3>Reset Password (Secure OTP)</h3>
+
+    <form id="resetForm">
+
+      <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+        Enter your details, click <b>Send OTP</b>, then check your registered email.
+      </p>
+
+      <!-- OTP Request -->
+      <button type="button" id="sendOtpBtn" class="btn" style="margin-bottom: 10px;">
+        Send OTP
+      </button>
+
+      <!-- OTP Input -->
+      <label for="otp">Enter OTP</label>
+      <input type="text" id="otp" placeholder="Enter 6-digit OTP" maxlength="6" required>
+
+      <!-- New Password -->
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword" placeholder="Enter New Password" required>
+
+      <!-- Confirm Password -->
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+
+      <button type="submit" class="btn">Update Password</button>
+    </form>
+  </div>
+</div>
+
+
+  <script src="login.js"></script>
+</body>
+</html>
