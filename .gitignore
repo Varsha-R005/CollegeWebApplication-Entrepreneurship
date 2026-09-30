@@ -2,4 +2,5 @@
 .env
 node_modules/
 uploads/
-"@ | Set-Content .gitignore
+"@ | Set-Content .gitignore.vscode/
+notes/
